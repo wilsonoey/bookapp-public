@@ -1,5 +1,4 @@
 const { createConnection } = require('mysql');
-const variable = require('./variable');
 
 const connection = createConnection({
   host: process.env.HOSTDB,
