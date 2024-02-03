@@ -1,6 +1,5 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
-const variable = require('./variable');
 const { success } = require('./response');
 const connection = require('./connection');
 const { nanoid } = require('nanoid');
