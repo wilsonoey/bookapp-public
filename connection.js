@@ -2,10 +2,10 @@ const { createConnection } = require('mysql');
 const variable = require('./variable');
 
 const connection = createConnection({
-  host: variable.HOSTDB,
-  user: variable.USERDB,
-  password: variable.PASSDB,
-  database: variable.NAMEDB,
+  host: process.env.HOSTDB,
+  user: process.env.USERDB,
+  password: process.env.PASSDB,
+  database: process.env.NAMEDB,
 });
 connection.connect((checker) => console.log(checker));
 // tampilkan di terminal setiap tindakan database menggunakan method yang ada
