@@ -8,7 +8,6 @@ const {
   successwithdataANDcount,
 } = require('./response');
 const connection = require('./connection');
-const variable = require('./variable');
 const { senderror } = require('./senderror');
 
 async function geterror(request, h) {
