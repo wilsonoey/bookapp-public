@@ -63,24 +63,6 @@ function successcreatedwithdata (message, data) {
   return response;
 }
 
-function authenticationerror (message) {
-  var response = {
-    statusCode: 401,
-    status: 'fail',
-    message: message
-  };
-  return response;
-}
-
-function authorizationerror (message) {
-  var response = {
-    statusCode: 403,
-    status: 'fail',
-    message: message
-  };
-  return response;
-}
-
 function successwithdataANDcount (count, message, data) {
   var response = {
     statusCode: 200,
@@ -100,7 +82,5 @@ module.exports = {
   success,
   successcreated,
   successcreatedwithdata,
-  authenticationerror,
-  authorizationerror,
   successwithdataANDcount
 };
