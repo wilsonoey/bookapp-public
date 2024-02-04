@@ -1,6 +1,6 @@
 # Introduction bookapp-public
 
-bookapp-public is public repository back-end application available suply to public with my goal for building portfolio. 
+bookapp-public is public repository back-end application available suply to public with my goal for building portfolio. Language in used this application partially using English and partially other using Indonesia.
 
 
 # Features
