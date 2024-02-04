@@ -130,7 +130,7 @@ async function deleteBook(request, h) {
 }
 
 const part = {
-  geterrorkad: geterror,
+  geterrorbook: geterror,
   addpublicbook: addBook,
   getallpublicbook: getAllBooks,
   getpublicbookbyid: getBookById,
