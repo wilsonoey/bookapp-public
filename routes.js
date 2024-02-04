@@ -4,7 +4,7 @@ const routes = [
   {
     method: 'GET',
     path: '/error',
-    handler: part.geterrorkad,
+    handler: part.geterrorbook,
   },
   {
     method: 'POST',
