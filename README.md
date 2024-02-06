@@ -13,6 +13,14 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `/book/add`
 -   Method
     -   `POST`
+-   Request Body
+    -   namebook as string
+    -   picturebook as string
+    -   descriptionbook as string
+    -   authorbook as string
+    -   publisherbook as string
+    -   createdat as datetime
+    -   updatedat as datetime
 -   Response
     -   Success
         ```
@@ -108,6 +116,14 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `/book/{idbook}`
 -   Method
     -   `PUT`
+-   Request Body
+    -   namebook as string
+    -   picturebook as string
+    -   descriptionbook as string
+    -   authorbook as string
+    -   publisherbook as string
+    -   createdat as datetime
+    -   updatedat as datetime
 -   Response
     -   Success
         ```
