@@ -15,7 +15,13 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `POST`
 -   Response
     -   Success
-    -   Failed
+        ```
+        {
+            statusCode: 201,
+            status: "success",
+            message: "Buku berhasil ditambahkan"
+        }
+        ```
 
 ## Get All Books
 
@@ -55,7 +61,7 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
         "isfavorite": 0,
         "createdat": "2023-12-08T07:43:58.000Z",
         "updatedat": "2023-12-08T07:43:58.000Z"
-      },
+      }
     ]
   }
   ```
@@ -68,7 +74,33 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `GET`
 -   Response
     -   Success
+        ```
+        {
+            statusCode: 200,
+            status: "success",
+            message: "Buku berhasil ditampilkan",
+            "data": {
+                "idbook": "7tBFyacxJj7cUGmTqoqJce8ZjzyMjj",
+                "namebook": "That Sounds So Good: 100 Real-Life Recipes for Every Day of the Week: A Cookbook That Sounds So Good",
+                "picturebook": "https://books.google.com/books/publisher/content/images/frontcover/7QkTEAAAQBAJ?fife=w480-h690 https://books.google.com/books/publisher/content/images/frontcover/7QkTEAAAQBAJ?fife=w480-h690",
+                "descriptionbook": "NEW YORK TIMES BESTSELLER • Recipes to match every mood, situation, and vibe from the James Beard Award–winning author of Where Cooking Begins   ONE OF THE TEN BEST COOKBOOKS OF THE YEAR: San Francisco Chronicle • ONE OF THE BEST COOKBOOKS OF THE YEAR: Time Out, Glamour, Taste of Home",
+                "authorbook": "Carla Lalli Music",
+                "publisherbook": "Clarkson Potter",
+                "iscompleted": 0,
+                "isfavorite": 0,
+                "createdat": "2023-12-08T23:35:20.000Z",
+                "updatedat": "2023-12-08T23:40:57.000Z"
+            }
+        }
+        ```
     -   Failed
+        ```
+        {
+            statusCode: 404,
+            status: "fail",
+            message: "Buku tidak ditemukan"
+        }
+        ```
 
 ## Update Book
 
@@ -78,7 +110,22 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `PUT`
 -   Response
     -   Success
+        ```
+        {
+            statusCode: 200,
+            status: "success",
+            message: "Buku berhasil diupdate"
+        }
+        ```
     -   Failed
+        ```
+        {
+            statusCode: 400,
+            status: "fail",
+            message: "Buku gagal diupdate"
+        }
+        ```
+        
 
 ## Delete Book
 
@@ -88,7 +135,21 @@ All data saved in database server using [Clever Cloud](https://www.clever-cloud.
     -   `DELETE`
 -   Response
     -   Success
+        ```
+        {
+            statusCode: 200,
+            status: "success",
+            message: "Buku berhasil dihapus"
+        }
+        ```
     -   Failed
+        ```
+        {
+            statusCode: 404,
+            status: "fail",
+            message: "Buku tidak ditemukan"
+        }
+        ```
 
 ## Get All Errors
 
