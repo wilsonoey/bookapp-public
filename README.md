@@ -1,11 +1,11 @@
 # Introduction bookapp-public
 
-bookapp-public is public repository back-end application available suply to public with my goal for building portfolio. Language in used this application partially using English and partially other using Indonesia.
+bookapp-public is public repository back-end application available suply to public about interesting books to read on various topics with my goal for building portfolio. Language in used this application partially using English and partially other using Indonesian. Programming language in used this application using JavaScript.
 
 
 # Features
 
-All data saved in database server using [Clever Cloud](https://www.clever-cloud.com). Features are using in this application such as:
+All data saved in MySQL database server using [Clever Cloud](https://www.clever-cloud.com). Features are using in this application such as:
 
 ## Create Book Item
 
