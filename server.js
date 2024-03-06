@@ -6,7 +6,6 @@ const { nanoid } = require('nanoid');
 const swagger = require('hapi-swagger');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
-const Path = require('path');
 
 const init = async () => {
   const server = Hapi.server({
@@ -47,13 +46,6 @@ const init = async () => {
     Vision,
     {
       plugin: swagger,
-      handler: {
-        directory: {
-          path: Path.join(__dirname, 'swagger-static'),
-          redirectToSlash: true,
-          index: true
-        }
-      },
       options: {
         info: {
           title: 'bookapp-public API Documentation',
