@@ -46,6 +46,13 @@ const init = async () => {
     Vision,
     {
       plugin: swagger,
+      handler: {
+        directory: {
+          path: Path.join(__dirname, 'swagger-static'),
+          redirectToSlash: true,
+          index: true
+        }
+      },
       options: {
         info: {
           title: 'bookapp-public API Documentation',
