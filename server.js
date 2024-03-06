@@ -6,6 +6,7 @@ const { nanoid } = require('nanoid');
 const swagger = require('hapi-swagger');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
+const Path = require('path');
 
 const init = async () => {
   const server = Hapi.server({
