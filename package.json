@@ -19,8 +19,7 @@
     "nanoid": "^3.3.6",
     "hapi-swagger": "^17.2.1",
     "@hapi/inert": "^7.1.0",
-    "@hapi/vision": "^7.0.3",
-    "path": "^0.12.7"
+    "@hapi/vision": "^7.0.3"
   },
   "devDependencies": {
     "mysql": "^2.18.1"
