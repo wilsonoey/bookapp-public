@@ -10,8 +10,7 @@
  "routes": [
   {
    "src": "/(.*)",
-   "dest": "server.js",
-   "methods": ["GET", "OPTIONS"]
+   "dest": "server.js"
   }
  ]
 }
