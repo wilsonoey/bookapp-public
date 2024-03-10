@@ -63,7 +63,7 @@ const init = async () => {
         ],
         documentationPath: '/',
         grouping: 'tags',
-        exposeSwaggerUI: true,
+        swaggerUI: true,
         //customCssUrl: '/public/swagger-ui.css',
       },
     }
