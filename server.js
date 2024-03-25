@@ -15,6 +15,9 @@ const init = async () => {
       cors: {
         origin: ['*'],
       },
+      payload: {
+        maxBytes: 1000000000
+      }
     },
   });
 
