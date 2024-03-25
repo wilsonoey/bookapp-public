@@ -17,7 +17,7 @@ const init = async () => {
       },
       payload: {
         maxBytes: 1000000000
-      }
+      },
     },
   });
 
