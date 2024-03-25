@@ -16,7 +16,7 @@ const init = async () => {
         origin: ['*'],
       },
       payload: {
-        maxBytes: 1000000000,
+        maxBytes: 1000000000000000,
       },
     },
   });
