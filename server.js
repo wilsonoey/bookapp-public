@@ -63,7 +63,6 @@ const init = async () => {
         ],
         documentationPath: '/',
         grouping: 'tags',
-        swaggerUI: true,
       },
     }
   ]);
