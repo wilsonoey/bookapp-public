@@ -14,10 +14,7 @@ const init = async () => {
     routes: {
       cors: {
         origin: ['*'],
-      },
-      payload: {
-        maxBytes: 1000000000000000,
-      },
+      }
     },
   });
 
