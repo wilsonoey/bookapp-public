@@ -10,7 +10,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Create Book Item
 
 -   URL
-    -   `/book/add`
+    -   `/en/book/add`
 -   Method
     -   `POST`
 -   Request Body
@@ -34,7 +34,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Get All Books
 
 -   URL
-    -   `/books`
+    -   `/en/books`
 -   Method
     -   `GET`
 -   Response
@@ -77,7 +77,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Get Book by ID
 
 -   URL
-    -   `/book/{idbook}`
+    -   `/en/book/{idbook}`
 -   Method
     -   `GET`
 -   Response
@@ -113,7 +113,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Update Book
 
 -   URL
-    -   `/book/{idbook}`
+    -   `/en/book/{idbook}`
 -   Method
     -   `PUT`
 -   Request Body
@@ -146,7 +146,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Delete Book
 
 -   URL
-    -   `/book/{idbook}`
+    -   `/en/book/{idbook}`
 -   Method
     -   `DELETE`
 -   Response
@@ -170,7 +170,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
 ## Get All Errors
 
 -   URL
-    -   `/error`
+    -   `/en/error`
 -   Method
     -   `GET`
 -   Response
