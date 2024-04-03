@@ -66,7 +66,7 @@ const init = async () => {
             description: 'Displays errors that occurred during the request process. Don`t forget to add /id atau /en before route destination. Example: /en/error'
           },
         ],
-        documentationPath: '/{languageCode}',
+        documentationPath: '/',
         grouping: 'tags',
       },
     },
