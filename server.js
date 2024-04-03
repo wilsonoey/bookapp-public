@@ -59,11 +59,11 @@ const init = async () => {
         tags : [
           {
             name: 'books',
-            description: 'Documentations for books'
+            description: 'Documentations for books. Don`t forget to add /id atau /en before route destination. Example: /en/books'
           },
           {
             name: 'errors',
-            description: 'Menampilkan error yang ada selama proses request'
+            description: 'Displays errors that occurred during the request process. Don`t forget to add /id atau /en before route destination. Example: /en/error'
           },
         ],
         documentationPath: '/{languageCode}',
