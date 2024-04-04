@@ -86,11 +86,28 @@ const routes = [
             idbook: Joi.string().example(nanoid(50)),
             namebook: Joi.string().example('Book name'),
             picturebook: Joi.string().example('Book picture'),
-            descriptionbook: Joi.string().example('Book description'),
-            authorbook: Joi.string().example('Book author'),
-            publisherbook: Joi.string().example('Book publisher'),
-            iscompleted: Joi.boolean().example(false),
-            isfavorite: Joi.boolean().example(false),
+            descriptionbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().example('Book description')
+            ),
+            authorbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().optional().allow(null),
+              Joi.string().example('Book author')
+            ),
+            publisherbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().optional().allow(null),
+              Joi.string().example('Book publisher')
+            ),
+            iscompleted: Joi.alternatives().try(
+              Joi.string().optional().allow(null),
+              Joi.number()
+            ),
+            isfavorite: Joi.alternatives().try(
+              Joi.string().optional().allow(null),
+              Joi.number()
+            ),
             createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
             updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
           }))
@@ -121,11 +138,28 @@ const routes = [
             idbook: Joi.string().example(nanoid(50)),
             namebook: Joi.string().example('Book name'),
             picturebook: Joi.string().example('Book picture'),
-            descriptionbook: Joi.string().example('Book description'),
-            authorbook: Joi.string().example('Book author'),
-            publisherbook: Joi.string().example('Book publisher'),
-            iscompleted: Joi.boolean().example(false),
-            isfavorite: Joi.boolean().example(false),
+            descriptionbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().example('Book description')
+            ),
+            authorbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().optional().allow(null),
+              Joi.string().example('Book author')
+            ),
+            publisherbook: Joi.alternatives().try(
+              Joi.string().optional().allow(''),
+              Joi.string().optional().allow(null),
+              Joi.string().example('Book publisher')
+            ),
+            iscompleted: Joi.alternatives().try(
+              Joi.string().optional().allow(null),
+              Joi.number()
+            ),
+            isfavorite: Joi.alternatives().try(
+              Joi.string().optional().allow(null),
+              Joi.number()
+            ),
             createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
             updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
           }))
