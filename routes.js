@@ -102,11 +102,13 @@ const routes = [
             ),
             iscompleted: Joi.alternatives().try(
               Joi.string().optional().allow(null),
-              Joi.number()
+              Joi.number(),
+              Joi.boolean()
             ),
             isfavorite: Joi.alternatives().try(
               Joi.string().optional().allow(null),
-              Joi.number()
+              Joi.number(),
+              Joi.boolean()
             ),
             createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
             updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
@@ -154,11 +156,13 @@ const routes = [
             ),
             iscompleted: Joi.alternatives().try(
               Joi.string().optional().allow(null),
-              Joi.number()
+              Joi.number(),
+              Joi.boolean()
             ),
             isfavorite: Joi.alternatives().try(
               Joi.string().optional().allow(null),
-              Joi.number()
+              Joi.number(),
+              Joi.boolean()
             ),
             createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
             updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
