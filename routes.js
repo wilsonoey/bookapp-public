@@ -50,6 +50,8 @@ const routes = [
           descriptionbook: Joi.string(),
           authorbook: Joi.string(),
           publisherbook: Joi.string(),
+          iscompleted: Joi.boolean().default(false),
+          isfavorite: Joi.boolean().default(false),
         }),
       },
       response: {
@@ -80,7 +82,18 @@ const routes = [
           status: Joi.string().example('success'),
           count: Joi.number().example(1),
           message: Joi.string().example('Data has been retrieved'),
-          data: Joi.array().items(Joi.object({}))
+          data: Joi.array().items(Joi.object({
+            idbook: Joi.string().example(nanoid(50)),
+            namebook: Joi.string().example('Book name'),
+            picturebook: Joi.string().example('Book picture'),
+            descriptionbook: Joi.string().example('Book description'),
+            authorbook: Joi.string().example('Book author'),
+            publisherbook: Joi.string().example('Book publisher'),
+            iscompleted: Joi.boolean().example(false),
+            isfavorite: Joi.boolean().example(false),
+            createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
+            updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
+          }))
         }).label('Result').description('Successful response in English'),
       },
     },
@@ -103,9 +116,19 @@ const routes = [
         schema: Joi.object({
           statusCode: Joi.number().example(200),
           status: Joi.string().example('success'),
-          count: Joi.number().example(1),
           message: Joi.string().example('Data has been retrieved'),
-          data: Joi.array().items(Joi.object({}))
+          data: Joi.array().items(Joi.object({
+            idbook: Joi.string().example(nanoid(50)),
+            namebook: Joi.string().example('Book name'),
+            picturebook: Joi.string().example('Book picture'),
+            descriptionbook: Joi.string().example('Book description'),
+            authorbook: Joi.string().example('Book author'),
+            publisherbook: Joi.string().example('Book publisher'),
+            iscompleted: Joi.boolean().example(false),
+            isfavorite: Joi.boolean().example(false),
+            createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
+            updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
+          }))
         }).label('Result').description('Successful response in English'),
       },
     },
@@ -129,15 +152,15 @@ const routes = [
           descriptionbook: Joi.string(),
           authorbook: Joi.string(),
           publisherbook: Joi.string(),
+          iscompleted: Joi.boolean().default(false),
+          isfavorite: Joi.boolean().default(false),
         })
       },
       response: {
         schema: Joi.object({
           statusCode: Joi.number().example(200),
           status: Joi.string().example('success'),
-          count: Joi.number().example(1),
-          message: Joi.string().example('Data has been retrieved'),
-          data: Joi.array().items(Joi.object({}))
+          message: Joi.string().example('Data has been updated')
         }).label('Result').description('Successful response in English'),
       },
     },
@@ -160,9 +183,7 @@ const routes = [
         schema: Joi.object({
           statusCode: Joi.number().example(200),
           status: Joi.string().example('success'),
-          count: Joi.number().example(1),
-          message: Joi.string().example('Data has been retrieved'),
-          data: Joi.array().items(Joi.object({}))
+          message: Joi.string().example('Data has been deleted'),
         }).label('Result').description('Successful response in English'),
       },
     },
