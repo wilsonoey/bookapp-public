@@ -11,6 +11,24 @@ const routes = [
       description: 'Get Error',
       notes: 'Getting error each request from the server',
       tags: ['api', 'errors'],
+      validate: {
+        params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en')
+        }),
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          count: Joi.number().example(1),
+          message: Joi.string().example('Error data has been retrieved'),
+          data: Joi.array().items(Joi.object({
+            iderror: Joi.string().example(nanoid(25)),
+            detailerror: Joi.string().example('Error message'),
+            createdaterror: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
+          }))
+        }).label('Result').description('Successful response in English'),
+      },
     },
   },
   {
@@ -22,6 +40,9 @@ const routes = [
       notes: 'Add new book to the database',
       tags: ['api', 'books'],
       validate: {
+        params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en')
+        }),
         payload: Joi.object({
           idbook: Joi.string().equal(nanoid(50)),
           namebook: Joi.string(),
@@ -29,7 +50,14 @@ const routes = [
           descriptionbook: Joi.string(),
           authorbook: Joi.string(),
           publisherbook: Joi.string(),
-        })
+        }),
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(201),
+          status: Joi.string().example('success'),
+          message: Joi.string().example('Data has been added')
+        }).label('Result').description('Successful response in English'),
       },
     },
   },
@@ -41,6 +69,20 @@ const routes = [
       description: 'Get All Books',
       notes: 'Get all books from the database',
       tags: ['api', 'books'],
+      validate: {
+        params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en')
+        }),
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          count: Joi.number().example(1),
+          message: Joi.string().example('Data has been retrieved'),
+          data: Joi.array().items(Joi.object({}))
+        }).label('Result').description('Successful response in English'),
+      },
     },
   },
   {
@@ -53,8 +95,18 @@ const routes = [
       tags: ['api', 'books'],
       validate: {
         params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en'),
           idbook: Joi.string().description('ID of the book to detail')
         })
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          count: Joi.number().example(1),
+          message: Joi.string().example('Data has been retrieved'),
+          data: Joi.array().items(Joi.object({}))
+        }).label('Result').description('Successful response in English'),
       },
     },
   },
@@ -68,6 +120,7 @@ const routes = [
       tags: ['api', 'books'],
       validate: {
         params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en'),
           idbook: Joi.string().description('ID of the book to edit')
         }),
         payload: Joi.object({
@@ -77,6 +130,15 @@ const routes = [
           authorbook: Joi.string(),
           publisherbook: Joi.string(),
         })
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          count: Joi.number().example(1),
+          message: Joi.string().example('Data has been retrieved'),
+          data: Joi.array().items(Joi.object({}))
+        }).label('Result').description('Successful response in English'),
       },
     },
   },
@@ -90,211 +152,21 @@ const routes = [
       tags: ['api', 'books'],
       validate: {
         params: Joi.object({
+          languageCode: Joi.string().valid('en', 'id').description('Language code (en = English, id = Indonesian)').default('en'),
           idbook: Joi.string().description('ID of the book to delete')
         })
+      },
+      response: {
+        schema: Joi.object({
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          count: Joi.number().example(1),
+          message: Joi.string().example('Data has been retrieved'),
+          data: Joi.array().items(Joi.object({}))
+        }).label('Result').description('Successful response in English'),
       },
     },
   },
 ];
 
 module.exports = routes;
-
-
-
-
-
-
-
-
-
-
-// const { nanoid } = require('nanoid');
-// const part = require('./handler');
-// const Joi = require('joi');
-
-// const routes = [
-//   {
-//     method: 'GET',
-//     path: '/{languageCode}/error',
-//     handler: part.geterrorbook,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Get Error',
-//           notes: 'Getting error each request from the server',
-//           tags: ['api', 'errors'],
-//         },
-//         'id': {
-//           description: 'Dapatkan Kesalahan',
-//           notes: 'Mendapatkan kesalahan setiap permintaan dari server',
-//           tags: ['api', 'eror'],
-//         }
-//       }
-//     },
-//   },
-//   {
-//     method: 'POST',
-//     path: '/{languageCode}/book/add',
-//     handler: part.addpublicbook,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Add Book',
-//           notes: 'Add new book to the database',
-//           tags: ['api', 'books'],
-//           validate: {
-//             payload: Joi.object({
-//               idbook: Joi.string().equal(nanoid(50)),
-//               namebook: Joi.string(),
-//               picturebook: Joi.string(),
-//               descriptionbook: Joi.string(),
-//               authorbook: Joi.string(),
-//               publisherbook: Joi.string(),
-//             })
-//           },
-//         },
-//         'id': {
-//           description: 'Tambah Buku',
-//           notes: 'Menambahkan data buku ke database',
-//           tags: ['api', 'buku'],
-//           validate: {
-//             payload: Joi.object({
-//               idbook: Joi.string().equal(nanoid(50)),
-//               namebook: Joi.string(),
-//               picturebook: Joi.string(),
-//               descriptionbook: Joi.string(),
-//               authorbook: Joi.string(),
-//               publisherbook: Joi.string(),
-//             })
-//           },
-//         }
-//       }
-      
-//     },
-//   },
-//   {
-//     method: 'GET',
-//     path: '/{languageCode}/books',
-//     handler: part.getallpublicbook,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Get All Books',
-//           notes: 'Get all books from the database',
-//           tags: ['api', 'books'],
-//         },
-//         'id': {
-//           description: 'Menampilkan Semua Buku',
-//           notes: 'Menampilkan semua buku dari database',
-//           tags: ['api', 'buku'],
-//         }
-//       }
-//     },
-//   },
-//   {
-//     method: 'GET',
-//     path: '/{languageCode}/book/{idbook}',
-//     handler: part.getpublicbookbyid,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Get book by id',
-//           notes: 'Get book by id from the database',
-//           tags: ['api', 'books'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID of the book to detail')
-//             })
-//           },
-//         },
-//         'id': {
-//           description: 'Dapatkan buku berdasarkan id',
-//           notes: 'Dapatkan buku berdasarkan id dari database',
-//           tags: ['api', 'buku'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID dari buku yang ingin dilihat detailnya')
-//             })
-//           },
-//         }
-//       }
-      
-//     },
-//   },
-//   {
-//     method: 'PUT',
-//     path: '/{languageCode}/book/{idbook}',
-//     handler: part.editpublicbook,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Edit book by id',
-//           notes: 'Edit book by id from the database',
-//           tags: ['api', 'books'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID of the book to edit')
-//             }),
-//             payload: Joi.object({
-//               namebook: Joi.string(),
-//               picturebook: Joi.string(),
-//               descriptionbook: Joi.string(),
-//               authorbook: Joi.string(),
-//               publisherbook: Joi.string(),
-//             })
-//           },
-//         },
-//         'id': {
-//           description: 'Edit buku berdasarkan id',
-//           notes: 'Edit buku berdasarkan id dari database',
-//           tags: ['api', 'buku'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID dari buku yang ingin diedit')
-//             }),
-//             payload: Joi.object({
-//               namebook: Joi.string(),
-//               picturebook: Joi.string(),
-//               descriptionbook: Joi.string(),
-//               authorbook: Joi.string(),
-//               publisherbook: Joi.string(),
-//             })
-//           },
-//         }
-//       }
-      
-//     },
-//   },
-//   {
-//     method: 'DELETE',
-//     path: '/{languageCode}/book/{idbook}',
-//     handler: part.deletepublicbook,
-//     options: {
-//       locale: {
-//         'en': {
-//           description: 'Delete book by id',
-//           notes: 'Delete book by id from the database',
-//           tags: ['api', 'books'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID of the book to delete')
-//             })
-//           },
-//         },
-//         'id': {
-//           description: 'Hapus buku berdasarkan id',
-//           notes: 'Hapus buku berdasarkan id dari database',
-//           tags: ['api', 'buku'],
-//           validate: {
-//             params: Joi.object({
-//               idbook: Joi.string().description('ID dari buku yang ingin dihapus')
-//             })
-//           },
-//         }
-//       }
-      
-//     },
-//   },
-// ];
-
-// module.exports = routes;
