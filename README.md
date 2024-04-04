@@ -239,7 +239,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
         }
         ```
 
-## Get All Books
+## Mendapatkan Semua Buku
 
 -   URL
     -   `/id/books`
@@ -282,7 +282,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
   }
   ```
 
-## Get Book by ID
+## Mendapatkan Buku berdasarkan ID
 
 -   URL
     -   `/id/book/{idbook}`
@@ -318,21 +318,21 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
         }
         ```
 
-## Update Book
+## Mengedit Buku
 
 -   URL
     -   `/id/book/{idbook}`
 -   Method
     -   `PUT`
 -   Request Body
-    -   namebook as string
-    -   picturebook as string
-    -   descriptionbook as string
-    -   authorbook as string
-    -   publisherbook as string
-    -   iscompleted as boolean
-    -   isfavorite as boolean
-    -   updatedat as datetime
+    -   namebook sebagai string
+    -   picturebook sebagai string
+    -   descriptionbook sebagai string
+    -   authorbook sebagai string
+    -   publisherbook sebagai string
+    -   iscompleted sebagai boolean
+    -   isfavorite sebagai boolean
+    -   updatedat sebagai datetime
 -   Response
     -   Success
         ```
@@ -352,7 +352,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
         ```
         
 
-## Delete Book
+## Menghapus Buku
 
 -   URL
     -   `/id/book/{idbook}`
@@ -376,7 +376,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
         }
         ```
 
-## Get All Errors
+## Mendapatkan Semua Eror
 
 -   URL
     -   `/id/error`
