@@ -2,7 +2,8 @@ const { nanoid } = require('nanoid');
 const part = require('./handler');
 const Joi = require('joi');
 
-const routes = [{
+const routes = [
+  {
     method: 'GET',
     path: '/{languageCode}/error',
     handler: part.geterrorbook,
