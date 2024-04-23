@@ -133,6 +133,10 @@ const routes = [
       },
       response: {
         schema: Joi.object({
+          
+        }).label('Result').description('Successful response in English'),
+        status: {
+          [200]: Joi.object({
           statusCode: Joi.number().example(200),
           status: Joi.string().example('success'),
           message: Joi.string().example('Data has been retrieved'),
@@ -166,8 +170,14 @@ const routes = [
             ),
             createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
             updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
-          }))
-        }).label('Result').description('Successful response in English'),
+          })),
+          }).label('Result').description('Successful response in English'),
+          [404]: Joi.object({
+            statusCode: Joi.number().example(404),
+            status: Joi.string().example('fail'),
+            message: Joi.string().example('Data using ID was not retrieved successfully'),
+          }).label('Result').description('Failed response in English'),
+        },
       },
     },
   },
@@ -201,10 +211,10 @@ const routes = [
             status: Joi.string().example('success'),
             message: Joi.string().example('Data has been updated'),
           }).label('Result').description('Successful response in English'),
-          [404]: Joi.object({
-            statusCode: Joi.number().example(404),
+          [400]: Joi.object({
+            statusCode: Joi.number().example(400),
             status: Joi.string().example('fail'),
-            message: Joi.string().example('Data using ID was not retrieved successfully'),
+            message: Joi.string().example('Data was not updated successfully'),
           }).label('Result').description('Failed response in English'),
         }
       },
