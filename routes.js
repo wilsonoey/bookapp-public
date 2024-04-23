@@ -224,7 +224,6 @@ const routes = [
           message: Joi.string().example('Data has been deleted'),
         }).label('Result').description('Successful response in English'),
       },
-      ,
       responses: {
         '400': {
           description: 'Bad Request',
