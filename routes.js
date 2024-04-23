@@ -219,11 +219,9 @@ const routes = [
       },
       response: {
         schema: Joi.object({
-          Joi.object({
-            statusCode: Joi.number().example(200),
-            status: Joi.string().example('success'),
-            message: Joi.string().example('Data has been deleted'),
-          })
+          statusCode: Joi.number().example(200),
+          status: Joi.string().example('success'),
+          message: Joi.string().example('Data has been deleted'),
         }).label('Result').description('Successful response in English'),
       },
     },
