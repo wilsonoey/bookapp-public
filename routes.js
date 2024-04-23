@@ -2,8 +2,7 @@ const { nanoid } = require('nanoid');
 const part = require('./handler');
 const Joi = require('joi');
 
-const routes = [
-  {
+const routes = [{
     method: 'GET',
     path: '/{languageCode}/error',
     handler: part.geterrorbook,
@@ -132,45 +131,42 @@ const routes = [
         })
       },
       response: {
-        schema: Joi.object({
-          
-        }).label('Result').description('Successful response in English'),
         status: {
           [200]: Joi.object({
-          statusCode: Joi.number().example(200),
-          status: Joi.string().example('success'),
-          message: Joi.string().example('Data has been retrieved'),
-          data: Joi.array().items(Joi.object({
-            idbook: Joi.string().example(nanoid(50)),
-            namebook: Joi.string().example('Book name'),
-            picturebook: Joi.string().example('Book picture'),
-            descriptionbook: Joi.alternatives().try(
-              Joi.string().optional().allow(''),
-              Joi.string().example('Book description')
-            ),
-            authorbook: Joi.alternatives().try(
-              Joi.string().optional().allow(''),
-              Joi.string().optional().allow(null),
-              Joi.string().example('Book author')
-            ),
-            publisherbook: Joi.alternatives().try(
-              Joi.string().optional().allow(''),
-              Joi.string().optional().allow(null),
-              Joi.string().example('Book publisher')
-            ),
-            iscompleted: Joi.alternatives().try(
-              Joi.string().optional().allow(null),
-              Joi.number(),
-              Joi.boolean()
-            ),
-            isfavorite: Joi.alternatives().try(
-              Joi.string().optional().allow(null),
-              Joi.number(),
-              Joi.boolean()
-            ),
-            createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
-            updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
-          })),
+            statusCode: Joi.number().example(200),
+            status: Joi.string().example('success'),
+            message: Joi.string().example('Data has been retrieved'),
+            data: Joi.array().items(Joi.object({
+              idbook: Joi.string().example(nanoid(50)),
+              namebook: Joi.string().example('Book name'),
+              picturebook: Joi.string().example('Book picture'),
+              descriptionbook: Joi.alternatives().try(
+                Joi.string().optional().allow(''),
+                Joi.string().example('Book description')
+              ),
+              authorbook: Joi.alternatives().try(
+                Joi.string().optional().allow(''),
+                Joi.string().optional().allow(null),
+                Joi.string().example('Book author')
+              ),
+              publisherbook: Joi.alternatives().try(
+                Joi.string().optional().allow(''),
+                Joi.string().optional().allow(null),
+                Joi.string().example('Book publisher')
+              ),
+              iscompleted: Joi.alternatives().try(
+                Joi.string().optional().allow(null),
+                Joi.number(),
+                Joi.boolean()
+              ),
+              isfavorite: Joi.alternatives().try(
+                Joi.string().optional().allow(null),
+                Joi.number(),
+                Joi.boolean()
+              ),
+              createdat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')),
+              updatedat: Joi.date().example(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''))
+            })),
           }).label('Result').description('Successful response in English'),
           [404]: Joi.object({
             statusCode: Joi.number().example(404),
