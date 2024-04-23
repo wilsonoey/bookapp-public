@@ -217,16 +217,14 @@ const routes = [
           idbook: Joi.string().description('ID of the book to delete')
         })
       },
-      
-      responses: {
-        '400': {
-          description: 'Bad Request',
-          schema: Joi.object({
-            statusCode: Joi.number().example(400),
-            status: Joi.string().example('error'),
-            message: Joi.string().example('Failed to delete data'),
-          }).label('Result').description('Failed response in English')
-        }
+      response: {
+        schema: Joi.object({
+          Joi.object({
+            statusCode: Joi.number().example(200),
+            status: Joi.string().example('success'),
+            message: Joi.string().example('Data has been deleted'),
+          }).label('Result').description('Successful response in English')
+        }),
       },
     },
   },
