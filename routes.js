@@ -227,7 +227,7 @@ const routes = [
           statusCode: Joi.number().example(404),
           status: Joi.string().example('fail'),
           message: Joi.string().example('Data not found'),
-        }).label('Result').description('Failed response in English'),
+        }).label('False').description('Failed response in English'),
       },
     },
   },
