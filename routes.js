@@ -223,8 +223,8 @@ const routes = [
             statusCode: Joi.number().example(200),
             status: Joi.string().example('success'),
             message: Joi.string().example('Data has been deleted'),
-          }).label('Result').description('Successful response in English')
-        }),
+          })
+        }).label('Result').description('Successful response in English'),
       },
     },
   },
