@@ -218,11 +218,18 @@ const routes = [
         })
       },
       response: {
-        schema: Joi.object({
-          statusCode: Joi.number().example(200),
-          status: Joi.string().example('success'),
-          message: Joi.string().example('Data has been deleted'),
-        }).label('Result').description('Successful response in English'),
+        status: {
+          [200]: Joi.object({
+            statusCode: Joi.number().example(200),
+            status: Joi.string().example('success'),
+            message: Joi.string().example('Data has been deleted'),
+          }).label('Result').description('Successful response in English'),
+          [404]: Joi.object({
+            statusCode: Joi.number().example(404),
+            status: Joi.string().example('fail'),
+            message: Joi.string().example('Data using ID was not retrieved successfully'),
+          }).label('Result').description('Failed response in English'),
+        }
       },
     },
   },
