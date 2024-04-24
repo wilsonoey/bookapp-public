@@ -80,9 +80,8 @@ async function getAllBooks(request, h) {
 
 async function getBookById(request, h) {
   try {
-    const { idbook } = request.params;
+    const { idbook, languageCode } = request.params;
     const query = 'SELECT * FROM books WHERE idbook = ?';
-    const { languageCode } = request.params;
     const setLang = languageCode === 'id' ? 'id' : 'en';
     return new Promise((resolve, reject) => {
       if (request.i18n.setLocale(setLang)) {
@@ -102,10 +101,9 @@ async function getBookById(request, h) {
 
 async function editBook(request, h) {
   try {
-    const { idbook } = request.params;
+    const { idbook, languageCode } = request.params;
     const updatedatbook = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
     const data = { ...request.payload, updatedat: updatedatbook };
-    const { languageCode } = request.params;
     const setLang = languageCode === 'id' ? 'id' : 'en';
     return new Promise((resolve, reject) => {
       let updateQuery = 'UPDATE books SET';
@@ -140,9 +138,8 @@ async function editBook(request, h) {
 
 async function deleteBook(request, h) {
   try {
-    const { idbook } = request.params;
+    const { idbook, languageCode } = request.params;
     const query = 'DELETE FROM books WHERE idbook = ?';
-    const { languageCode } = request.params;
     const setLang = languageCode === 'id' ? 'id' : 'en';
     return new Promise((resolve, reject) => {
       if (request.i18n.setLocale(setLang)) {
