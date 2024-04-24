@@ -148,8 +148,7 @@ async function deleteBook(request, h) {
             notfound(request.i18n.__('status-fail'), request.i18n.__('message-delete-fail'))
           ).code(404)) : resolve(h.response(success(request.i18n.__('status-finish'), request.i18n.__('message-delete-success'))).code(200))
         )));
-      }
-      
+      } 
     });
   } catch (error) {
     senderror(request, h, error, "deleteBook");
