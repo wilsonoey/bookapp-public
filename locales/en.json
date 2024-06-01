@@ -2,7 +2,6 @@
     "status-finish": "success",
     "status-error": "fail",
     "message-add-success": "Data has been added",
-    "message-add-error-success": "Error data has been added",
     "message-get-data-success": "Data has been retrieved",
     "message-get-error-success": "Error data has been retrieved",
     "message-update-success": "Data has been updated",
