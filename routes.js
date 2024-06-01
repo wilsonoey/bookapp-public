@@ -208,7 +208,7 @@ const routes = [
             status: Joi.string().example('success'),
             message: Joi.string().example('Data has been updated'),
           }).label('Result').description('Successful response in English'),
-          [400]: Joi.object({
+          [404]: Joi.object({
             statusCode: Joi.number().example(400),
             status: Joi.string().example('fail'),
             message: Joi.string().example('Data was not updated successfully'),
