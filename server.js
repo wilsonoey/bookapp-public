@@ -19,7 +19,7 @@ const init = async () => {
     },
   });
 
-  server.ext('onPreResponse', (request, h) => {
+  server.ext('onPreResponse', async(request, h) => {
     // mendapatkan konteks response dari request
     const { response } = request;
     const id = nanoid(25);
@@ -31,16 +31,7 @@ const init = async () => {
         createdaterror: createdat,
       };
       const query = 'INSERT INTO error SET ?';
-      const { languageCode } = request.params;
-      const setLang = languageCode === 'id' ? 'id' : 'en';
-      if (request.i18n.setLocale(setLang)) {
-        connection.query(query, data, (error) => {
-          if (error) {
-            console.error(error);
-          }
-          h.response(success(request.i18n.__('status-finish'), request.i18n.__('message-add-error-success'))).code(201);
-        });
-      }
+      await connection.query(query, data);
     }
     // jika bukan error, lanjutkan dengan response sebelumnya (tanpa terintervensi)
     return h.continue;
