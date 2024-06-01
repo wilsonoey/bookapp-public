@@ -12,13 +12,7 @@ async function senderror (req, res, errorparams, name) {
     createdaterror: createdat,
   };
   const query = 'INSERT INTO error SET ?';
-  const { languageCode } = req.params;
-  const setLang = languageCode === 'id' ? 'id' : 'en';
-  if (req.i18n.setLocale(setLang)) {
-    connection.query(query, data, (error) => {
-      res.response(success(req.i18n.__('status-finish'), req.i18n.__('message-add-error-success'))).code(201);
-    });
-  }
+  await connection.query(query, data);
   return res.response(servererror(stack));
 }
 
