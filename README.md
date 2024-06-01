@@ -141,7 +141,7 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
     -   Failed
         ```
         {
-            statusCode: 400,
+            statusCode: 404,
             status: "fail",
             message: "Data using ID was not retrieved successfully"
         }
@@ -345,7 +345,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   Failed
         ```
         {
-            statusCode: 400,
+            statusCode: 404,
             status: "gagal",
             message: "Data menggunakan id tidak berhasil ditampilkan"
         }
