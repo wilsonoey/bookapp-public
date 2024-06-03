@@ -55,11 +55,18 @@ const routes = [
         }),
       },
       response: {
-        schema: Joi.object({
-          statusCode: Joi.number().example(201),
-          status: Joi.string().example('success'),
-          message: Joi.string().example('Data has been added')
-        }).label('Result').description('Successful response in English'),
+        status: {
+          [201]: Joi.object({
+            statusCode: Joi.number().example(201),
+            status: Joi.string().example('success'),
+            message: Joi.string().example('Data has been added'),
+          }).label('Result').description('Successful response in English'),
+          [400]: Joi.object({
+            statusCode: Joi.number().example(400),
+            status: Joi.string().example('fail'),
+            message: Joi.string().example('Data failed to add'),
+          }).label('Result').description('Failed response in English'),
+        }
       },
     },
   },
