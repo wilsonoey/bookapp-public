@@ -6,6 +6,7 @@
     "message-get-error-success": "Data eror berhasil ditampilkan",
     "message-update-success": "Data berhasil diubah",
     "message-delete-success": "Data berhasil dihapus",
+    "message-add-fail": "Data gagal ditambahkan",
     "message-get-fail": "Data tidak berhasil ditampilkan",
     "message-get-by-id-fail": "Data menggunakan id tidak berhasil ditampilkan",
     "message-update-fail": "Data tidak berhasil diubah",
