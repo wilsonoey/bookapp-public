@@ -49,7 +49,7 @@ async function addBook(request, h) {
           successcreated(request.i18n.__('status-finish'), request.i18n.__('message-add-success'))
         ).code(201);
       } else {
-        return h.response(notfound(request.i18n.__('message-get-fail'))).code(404);
+        return h.response(clienterror(request.i18n.__('message-add-fail'))).code(400);
       }
     }
   } catch (error) {
