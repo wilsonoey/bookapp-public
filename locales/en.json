@@ -6,6 +6,7 @@
     "message-get-error-success": "Error data has been retrieved",
     "message-update-success": "Data has been updated",
     "message-delete-success": "Data has been deleted",
+    "message-add-fail": "Data failed to add",
     "message-get-fail": "Data was not retrieved successfully",
     "message-get-by-id-fail": "Data using ID was not retrieved successfully",
     "message-update-fail": "Data was not updated successfully",
