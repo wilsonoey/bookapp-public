@@ -34,6 +34,14 @@ All data saved in MySQL database server using [Clever Cloud](https://www.clever-
             message: "Data has been added"
         }
         ```
+    -   Failed
+        ```
+        {
+            statusCode: 400,
+            status: "fail",
+            message: "Data failed to add"
+        }
+        ```
 
 ## Get All Books
 
@@ -229,13 +237,21 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   isfavorite sebagai boolean
     -   createdat sebagai datetime
     -   updatedat sebagai datetime
--   Response
-    -   Success
+-   Respon
+    -   Sukses
         ```
         {
             statusCode: 201,
             status: "sukses",
             message: "Data berhasil ditambahkan"
+        }
+        ```
+    -   Gagal
+        ```
+        {
+            statusCode: 400,
+            status: "gagal",
+            message: "Data gagal ditambahkan"
         }
         ```
 
@@ -245,7 +261,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   `/id/books`
 -   Method
     -   `GET`
--   Response
+-   Respon
     
   ```
   {
@@ -288,8 +304,8 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   `/id/book/{idbook}`
 -   Method
     -   `GET`
--   Response
-    -   Success
+-   Respon
+    -   Sukses
         ```
         {
             statusCode: 200,
@@ -309,7 +325,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
             }
         }
         ```
-    -   Failed
+    -   Gagal
         ```
         {
             statusCode: 404,
@@ -333,8 +349,8 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   iscompleted sebagai boolean
     -   isfavorite sebagai boolean
     -   updatedat sebagai datetime
--   Response
-    -   Success
+-   Respon
+    -   Sukses
         ```
         {
             statusCode: 200,
@@ -342,7 +358,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
             message: "Buku berhasil diupdate"
         }
         ```
-    -   Failed
+    -   Gagal
         ```
         {
             statusCode: 404,
@@ -358,8 +374,8 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   `/id/book/{idbook}`
 -   Method
     -   `DELETE`
--   Response
-    -   Success
+-   Respon
+    -   Sukses
         ```
         {
             statusCode: 200,
@@ -367,7 +383,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
             message: "Buku berhasil dihapus"
         }
         ```
-    -   Failed
+    -   Gagal
         ```
         {
             statusCode: 404,
@@ -382,7 +398,7 @@ Semua data disimpan di server basis data MySQL menggunakan [Clever Cloud](https:
     -   `/id/error`
 -   Method
     -   `GET`
--   Response
+-   Respon
     
   ```
   {
