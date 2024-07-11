@@ -258,6 +258,17 @@ const routes = [
     method: '*',
     path: '/{p*}',
     handler: part.besides,
+    options: {
+      description: 'Get a not found response if accessing other than the existing route',
+      notes: 'Get a not found response',
+      tags: ['api', 'errors'],
+      response: {
+        schema: Joi.object({
+          status: Joi.string().example('success'),
+          message: Joi.string().example('Error data has been retrieved'),
+        }).label('Result').description('Fail response because not found routes in English'),
+      },
+    },
   },
 ];
 
