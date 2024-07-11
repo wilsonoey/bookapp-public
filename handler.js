@@ -130,19 +130,13 @@ async function deleteBook(request, h) {
 }
 
 function routesOthers(req, res) {
-  const blob = new Blob([res], {
-    type: "text/html",
-    endings: "native",
-  });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "profile_app.html";
-  link.click();
   return res.response({
     status: 'fail',
-    message: 'The route you are accessing was not found return',
+    message: JSON.stringify(res),
   }).code(404);
 };
+
+//'The route you are accessing was not found return'
 
 const part = {
   geterrorbook: geterror,
