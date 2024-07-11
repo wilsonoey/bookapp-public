@@ -254,6 +254,11 @@ const routes = [
       },
     },
   },
+  {
+    method: '*',
+    path: '/{p*}',
+    handler: part.besides,
+  },
 ];
 
 module.exports = routes;
