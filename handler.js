@@ -132,11 +132,9 @@ async function deleteBook(request, h) {
 function routesOthers(req, res) {
   return res.response({
     status: 'fail',
-    message: JSON.stringify(res),
+    message: `The route you are accessing was not found return ${res}`,
   }).code(404);
 };
-
-//'The route you are accessing was not found return'
 
 const part = {
   geterrorbook: geterror,
