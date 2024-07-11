@@ -130,13 +130,6 @@ async function deleteBook(request, h) {
 }
 
 async function routesOthers(req, res) {
-  const data = {
-    iderror: id,
-    detailerror: JSON.stringfy(res),
-    createdaterror: createdat,
-  };
-  const query = 'INSERT INTO error SET ?';
-  await connection.query(query, data);
   return res.response({
     status: 'fail',
     message: 'The route you are accessing was not found return',
