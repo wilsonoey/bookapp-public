@@ -129,6 +129,13 @@ async function deleteBook(request, h) {
   }
 }
 
+function routesOthers(req, res) {
+  return res.response({
+    status: 'fail',
+    message: 'Halaman yang Anda cari tidak ditemukan',
+  }).code(404);
+}
+
 const part = {
   geterrorbook: geterror,
   addpublicbook: addBook,
@@ -136,6 +143,7 @@ const part = {
   getpublicbookbyid: getBookById,
   editpublicbook: editBook,
   deletepublicbook: deleteBook,
+  besides: routesOthers,
 };
 
 module.exports = part;
