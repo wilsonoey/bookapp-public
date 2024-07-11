@@ -11,5 +11,5 @@
     "message-get-by-id-fail": "Data using ID was not retrieved successfully",
     "message-update-fail": "Data was not updated successfully",
     "message-delete-fail": "Data was not deleted successfully",
-    "not-found": "Route not found"
+    "not-found": "The route you are accessing was not found"
 }
