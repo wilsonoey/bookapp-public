@@ -10,5 +10,6 @@
     "message-get-fail": "Data tidak berhasil ditampilkan",
     "message-get-by-id-fail": "Data menggunakan id tidak berhasil ditampilkan",
     "message-update-fail": "Data tidak berhasil diubah",
-    "message-delete-fail": "Data tidak berhasil dihapus"
+    "message-delete-fail": "Data tidak berhasil dihapus",
+    "not-found": "Rute tidak ditemukan"
 }
