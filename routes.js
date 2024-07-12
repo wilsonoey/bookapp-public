@@ -264,7 +264,8 @@ const routes = [
       tags: ['api', 'errors'],
       response: {
         schema: Joi.object({
-          status: Joi.string().example('success'),
+          statusCode: Joi.number().example(404),
+          status: Joi.string().example('fail'),
           message: Joi.string().example('Error data has been retrieved'),
         }).label('Result').description('Fail response because not found routes in English'),
       },
