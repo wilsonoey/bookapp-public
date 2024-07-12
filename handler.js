@@ -129,39 +129,12 @@ async function deleteBook(request, h) {
   }
 }
 
-async function routesOthers(req, res) {
-  const id = nanoid(50);
-  const createdat = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
-  const data = {
-    iderror: id,
-    detailerror: simpleStringify(res),
-    createdaterror: createdat,
-  };
-  const query = 'INSERT INTO error SET ?';
-  await connection.query(query, data);
+function routesOthers(req, res) {
+  console.log(res);
   return res.response({
     status: 'fail',
     message: 'The route you are accessing was not found return',
   }).code(404);
-};
-
-function simpleStringify (object){
-    // stringify an object, avoiding circular structures
-    // https://stackoverflow.com/a/31557814
-    var simpleObject = {};
-    for (var prop in object ){
-        if (!object.hasOwnProperty(prop)){
-            continue;
-        }
-        if (typeof(object[prop]) == 'object'){
-            continue;
-        }
-        if (typeof(object[prop]) == 'function'){
-            continue;
-        }
-        simpleObject[prop] = object[prop];
-    }
-    return JSON.stringify(simpleObject); // returns cleaned up JSON
 };
 
 const part = {
