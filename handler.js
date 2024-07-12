@@ -134,7 +134,7 @@ async function routesOthers(req, res) {
   const createdat = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
   const data = {
     iderror: id,
-    detailerror: JSON.parse(res),
+    detailerror: res,
     createdaterror: createdat,
   };
   const query = 'INSERT INTO error SET ?';
