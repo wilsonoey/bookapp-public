@@ -263,11 +263,13 @@ const routes = [
       notes: 'Get a not found response',
       tags: ['api', 'errors'],
       response: {
-        schema: Joi.object({
-          statusCode: Joi.number().example(404),
-          status: Joi.string().example('fail'),
-          message: Joi.string().example('Error data has been retrieved'),
-        }).label('Result').description('Fail response because not found routes in English'),
+        status: {
+          [404]: Joi.object({
+            statusCode: Joi.number().example(404),
+            status: Joi.string().example('fail'),
+            message: Joi.string().example('Error data has been retrieved'),
+          }).label('Result').description('Fail response because not found routes in English'),
+        },
       },
     },
   },
