@@ -141,9 +141,11 @@ async function routesOthers(req, res) {
   await connection.query(query, data);
   return res.response({
     status: 'fail',
-    message: 'The route you are accessing was not found return',
+    message: res,
   }).type('application/json');
 };
+
+//'The route you are accessing was not found return'
 
 const part = {
   geterrorbook: geterror,
