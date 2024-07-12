@@ -129,7 +129,7 @@ async function deleteBook(request, h) {
   }
 }
 
-await function routesOthers(req, res) {
+async function routesOthers(req, res) {
   const id = nanoid(50);
   const createdat = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
   const data = {
