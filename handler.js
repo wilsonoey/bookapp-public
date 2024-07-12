@@ -83,7 +83,7 @@ async function getBookById(request, h) {
       if (getdatabyid.length > 0) {
         return h.response(successwithdata(request.i18n.__('status-finish'), request.i18n.__('message-get-data-success'), getdatabyid[0])).code(200);
       } else {
-        return h.response(notfound(request.i18n.__('status-fail'), request.i18n.__('message-get-by-id-fail'))).code(404);
+        return h.response(notfound(request.i18n.__('status-error'), request.i18n.__('message-get-by-id-fail'))).code(404);
       }
     }
   } catch (error) {
@@ -103,7 +103,7 @@ async function editBook(request, h) {
       if (editdata.affectedRows > 0) {
         return h.response(success(request.i18n.__('status-finish'), request.i18n.__('message-update-success'))).code(200);
       } else {
-        return h.response(notfound(request.i18n.__('status-fail'), request.i18n.__('message-update-fail'))).code(404);
+        return h.response(notfound(request.i18n.__('status-error'), request.i18n.__('message-update-fail'))).code(404);
       }
     }
   } catch (error) {
@@ -121,7 +121,7 @@ async function deleteBook(request, h) {
       if (deletedata.affectedRows > 0) {
         return h.response(success(request.i18n.__('status-finish'), request.i18n.__('message-delete-success'))).code(200);
       } else {
-        return h.response(notfound(request.i18n.__('status-fail'), request.i18n.__('message-delete-fail'))).code(404);
+        return h.response(notfound(request.i18n.__('status-error'), request.i18n.__('message-delete-fail'))).code(404);
       }
     }
   } catch (error) {
@@ -132,7 +132,7 @@ async function deleteBook(request, h) {
 function routesOthers(req, res) {
   const setLang = req.path.split('/')[1] === 'id' ? 'id' : 'en';
   if (req.i18n.setLocale(setLang)) {
-    return res.response(notfound(req.i18n.__('status-fail'), req.i18n.__('not-found'))).code(404);
+    return res.response(notfound(req.i18n.__('status-error'), req.i18n.__('not-found'))).code(404);
   }
 };
 
