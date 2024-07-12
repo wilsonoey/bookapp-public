@@ -134,7 +134,7 @@ function routesOthers(req, res) {
   return res.response({
     status: 'fail',
     message: 'The route you are accessing was not found return',
-  }).code(404);
+  }).code(200);
 };
 
 const part = {
