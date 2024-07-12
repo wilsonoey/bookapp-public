@@ -141,8 +141,8 @@ async function routesOthers(req, res) {
   await connection.query(query, data);
   return res.response({
     status: 'fail',
-    message: res,
-  }).type('application/json');
+    message: JSON.stringify(res),
+  }).code(404);
 };
 
 //'The route you are accessing was not found return'
