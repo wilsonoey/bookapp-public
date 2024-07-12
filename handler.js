@@ -134,18 +134,16 @@ async function routesOthers(req, res) {
   const createdat = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
   const data = {
     iderror: id,
-    detailerror: res,
+    detailerror: JSON.stringify(res),
     createdaterror: createdat,
   };
   const query = 'INSERT INTO error SET ?';
   await connection.query(query, data);
   return res.response({
     status: 'fail',
-    message: JSON.stringify(res),
+    message: 'The route you are accessing was not found return',
   }).code(404);
 };
-
-//'The route you are accessing was not found return'
 
 const part = {
   geterrorbook: geterror,
