@@ -130,7 +130,7 @@ async function deleteBook(request, h) {
 }
 
 function routesOthers(req, res) {
-  console.log(req.path);
+  console.log(req.path.split('/')[1]);
   return res.response({
     status: 'fail',
     message: 'The route you are accessing was not found return',
