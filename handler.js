@@ -130,11 +130,9 @@ async function deleteBook(request, h) {
 }
 
 function routesOthers(req, res) {
-  console.log(req.path.split('/')[1]);
-  return res.response({
-    status: 'fail',
-    message: 'The route you are accessing was not found return',
-  }).code(200);
+  if (request.i18n.setLocale(req.path.split('/')[1])) {
+    return h.response(notfound(request.i18n.__('status-fail'), request.i18n.__('not-found'))).code(404);
+  }
 };
 
 const part = {
