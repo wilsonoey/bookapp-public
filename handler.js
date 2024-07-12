@@ -132,7 +132,7 @@ async function deleteBook(request, h) {
 function routesOthers(req, res) {
   const setLang = req.path.split('/')[1] === 'id' ? 'id' : 'en';
   if (req.i18n.setLocale(setLang)) {
-    return h.response(notfound(request.i18n.__('status-fail'), request.i18n.__('not-found'))).code(404);
+    return res.response(notfound(req.i18n.__('status-fail'), req.i18n.__('not-found'))).code(404);
   }
 };
 
