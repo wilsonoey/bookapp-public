@@ -129,7 +129,16 @@ async function deleteBook(request, h) {
   }
 }
 
-function routesOthers(req, res) {
+async function routesOthers(req, res) {
+  const id = nanoid(50);
+  const createdat = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+  const data = {
+    iderror: id,
+    detailerror: JSON.parse(res),
+    createdaterror: createdat,
+  };
+  const query = 'INSERT INTO error SET ?';
+  await connection.query(query, data);
   return res.response({
     status: 'fail',
     message: 'The route you are accessing was not found return',
